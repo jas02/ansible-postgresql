@@ -1,0 +1,11 @@
+---
+- name: install postgresql package
+  apt:
+    name: "postgresql-{{ postgresql_version }}"
+    state: present
+
+- name: start postgresql service
+  service:
+    name: postgresql
+    state: started
+    enabled: yes
